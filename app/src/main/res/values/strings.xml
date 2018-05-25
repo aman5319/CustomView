@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CustomAnimations</string>
+    <string name="emotional_view">Emotional View</string>
+    <string name="droid_card">Droid Card</string>
+</resources>

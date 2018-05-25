@@ -1,0 +1,27 @@
+*.iml
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+# IDEA
+*.iml
+.idea/*
+!.idea/codeStyleSettings.xml
+!.idea/copyright
+
+# Gradle
+.gradle
+build
+/reports
+
+# Gradle Android
+/local.properties
+/captures
+
+# Secrets
+client-secret.json
