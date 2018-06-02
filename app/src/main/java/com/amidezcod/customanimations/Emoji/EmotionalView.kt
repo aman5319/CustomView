@@ -70,7 +70,7 @@ class EmotionalView(context: Context?, attrs: AttributeSet?) : View(context, att
             style = Paint.Style.STROKE
             strokeWidth = borderWidth
         }
-        canvas!!.drawCircle(width / 2f, height / 2f, radius - 10f, paint)
+        canvas!!.drawCircle(width / 2f, height / 2f, radius, paint)
     }
 
     private fun drawEyes(canvas: Canvas?) {
@@ -110,14 +110,19 @@ class EmotionalView(context: Context?, attrs: AttributeSet?) : View(context, att
             color = faceColor
             style = Paint.Style.FILL
         }
-        canvas!!.drawCircle(width / 2f, height / 2f, radius - 10f, paint)
+        canvas!!.drawCircle(width / 2f, height / 2f, radius, paint)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         size = Math.min(measuredWidth, measuredHeight)
-        radius = (size / 2f)
-        setMeasuredDimension(size, size)
+        val minw = size + paddingLeft + paddingRight
+        val w = View.resolveSizeAndState(minw, widthMeasureSpec, 0)
+        // Ask for a height that would let the view get as big as it can
+        var minh = size + paddingBottom + paddingTop
+        val h = View.resolveSizeAndState(minh, heightMeasureSpec, 0)
+        setMeasuredDimension(w, h)
+        radius = (size * 0.95 / 2f).toFloat()
     }
 
     override fun onSaveInstanceState(): Parcelable {

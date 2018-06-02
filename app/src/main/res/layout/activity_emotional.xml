@@ -8,6 +8,7 @@
         android:id="@+id/emotional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         app:borderColor="#de5151"
         app:borderWidth="6dp"
         app:eyesColor="#2deaa2"
