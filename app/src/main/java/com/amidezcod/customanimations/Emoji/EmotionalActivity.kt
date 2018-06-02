@@ -10,7 +10,11 @@ class EmotionalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_emotional);
         emotional.setOnClickListener {
-            emotional.hapinessState = EmotionalView.SAD
+            emotional.hapinessState = if (emotional.hapinessState == EmotionalView.HAPPY)
+                EmotionalView.SAD
+            else
+                EmotionalView.HAPPY
+
         }
     }
 }
