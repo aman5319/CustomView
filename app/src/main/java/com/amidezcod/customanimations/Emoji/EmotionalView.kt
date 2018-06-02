@@ -21,6 +21,7 @@ class EmotionalView(context: Context?, attrs: AttributeSet?) : View(context, att
         const val SAD = 0L
     }
 
+
     private var faceColor = DEFAULT_FACE_COLOR
     private var eyesColor = DEFAULT_EYES_COLOR
     private var mouthColor = DEFAULT_MOUTH_COLOR
@@ -69,7 +70,7 @@ class EmotionalView(context: Context?, attrs: AttributeSet?) : View(context, att
             style = Paint.Style.STROKE
             strokeWidth = borderWidth
         }
-        canvas!!.drawCircle(radius, radius, radius, paint)
+        canvas!!.drawCircle(width / 2f, height / 2f, radius - 10f, paint)
     }
 
     private fun drawEyes(canvas: Canvas?) {
@@ -109,13 +110,13 @@ class EmotionalView(context: Context?, attrs: AttributeSet?) : View(context, att
             color = faceColor
             style = Paint.Style.FILL
         }
-        canvas!!.drawCircle(radius, radius, radius, paint)
+        canvas!!.drawCircle(width / 2f, height / 2f, radius - 10f, paint)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         size = Math.min(measuredWidth, measuredHeight)
-        radius = size / 2f
+        radius = (size / 2f)
         setMeasuredDimension(size, size)
     }
 
