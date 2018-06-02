@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Emoji.EmotionalActivity" />
         <activity android:name=".droidCardOverlap.DroidActivity" />
-        <activity android:name=".knob_packa.KnobActivity"></activity>
+        <activity android:name=".knob_packa.KnobActivity" />
+        <activity android:name=".revealBasedAnimation.RevealActivity"></activity>
     </application>
 
 </manifest>

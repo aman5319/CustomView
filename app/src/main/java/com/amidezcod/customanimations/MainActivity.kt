@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.amidezcod.customanimations.Emoji.EmotionalActivity
 import com.amidezcod.customanimations.droidCardOverlap.DroidActivity
 import com.amidezcod.customanimations.knob_packa.KnobActivity
+import com.amidezcod.customanimations.revealBasedAnimation.RevealActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 */
         knob.setOnClickListener {
             intent11<KnobActivity>()
+        }
+        reveal_button.setOnClickListener {
+            intent11<RevealActivity>()
         }
     }
 
