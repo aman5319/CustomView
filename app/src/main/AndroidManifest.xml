@@ -19,7 +19,8 @@
         <activity android:name=".Emoji.EmotionalActivity" />
         <activity android:name=".droidCardOverlap.DroidActivity" />
         <activity android:name=".knob_packa.KnobActivity" />
-        <activity android:name=".revealBasedAnimation.RevealActivity"></activity>
+        <activity android:name=".revealBasedAnimation.RevealActivity" />
+        <activity android:name=".FreeDraw.FreeDrawActivity"></activity>
     </application>
 
 </manifest>

@@ -24,7 +24,6 @@
 
     <com.amidezcod.customanimations.editTextCLear.EditTextClear
         android:id="@+id/ww"
-
         style="@style/button_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,8 +34,6 @@
     <Button
         android:id="@+id/knob"
         style="@style/button_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Knob"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,11 +42,17 @@
     <Button
         android:id="@+id/reveal_button"
         style="@style/button_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="reveal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/knob" />
+
+    <Button
+        android:id="@+id/free_Draw"
+        style="@style/button_style"
+        android:text="Free Draw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reveal_button" />
 
 </android.support.constraint.ConstraintLayout>

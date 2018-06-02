@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.amidezcod.customanimations.Emoji.EmotionalActivity
+import com.amidezcod.customanimations.FreeDraw.FreeDrawActivity
 import com.amidezcod.customanimations.droidCardOverlap.DroidActivity
 import com.amidezcod.customanimations.knob_packa.KnobActivity
 import com.amidezcod.customanimations.revealBasedAnimation.RevealActivity
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         }
         reveal_button.setOnClickListener {
             intent11<RevealActivity>()
+        }
+        free_Draw.setOnClickListener {
+            intent11<FreeDrawActivity>()
         }
     }
 
