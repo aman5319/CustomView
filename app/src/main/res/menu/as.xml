@@ -7,6 +7,6 @@
         app:showAsAction="collapseActionView" />
     <item
         android:id="@+id/click"
-        android:title="Click"
+        android:title="Save"
         app:showAsAction="collapseActionView" />
 </menu>

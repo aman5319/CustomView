@@ -22,7 +22,7 @@ class FreeDrawActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.clear -> simpleDrawingView1.clearScreen()
-            R.id.click -> simpleDrawingView1.takePicture()
+            R.id.click -> simpleDrawingView1.savePicture()
             else -> return true
         }
         return true
