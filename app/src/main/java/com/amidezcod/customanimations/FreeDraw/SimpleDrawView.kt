@@ -8,14 +8,14 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import android.R.attr.path
-
-
+import android.widget.Toast
 
 
 class SimpleDrawView(context: Context, attrs: AttributeSet) : View(context, attrs) {
+
+
     // setup initial color
-    private val paintColor = Color.BLACK
+    private val paintColor = Color.parseColor("#487F6E")
     // defines paint and canvas
     lateinit var drawPaint: Paint
     private val path = Path()
@@ -47,8 +47,19 @@ class SimpleDrawView(context: Context, attrs: AttributeSet) : View(context, attr
 
     }
 
+    //Not Implemented
+    fun takePicture() {
+        Toast.makeText(context, "Click ", Toast.LENGTH_SHORT).show()
+    }
+
     override fun onDraw(canvas: Canvas) {
         canvas.drawPath(path, drawPaint)
+    }
+
+    fun clearScreen() {
+        Toast.makeText(context, "Clear Path", Toast.LENGTH_SHORT).show()
+        path.reset()
+        invalidate()
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
@@ -65,4 +76,5 @@ class SimpleDrawView(context: Context, attrs: AttributeSet) : View(context, attr
         postInvalidate() // Indicate view should be redrawn
         return true
     }
+
 }
