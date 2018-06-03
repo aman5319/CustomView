@@ -90,7 +90,7 @@ class SimpleDrawView(context: Context, attrs: AttributeSet) : View(context, attr
         MediaScannerConnection.scanFile(context, arrayOf(photo.absolutePath), null) { path, uri ->
             Handler(context.mainLooper).post({
                 Toast.makeText(context, "${photo.name} saved to gallery", Toast.LENGTH_SHORT).show()
-                Log.v("TAG", uri.toString())git 
+                Log.v("TAG", uri.toString())
             })
         }
     }
