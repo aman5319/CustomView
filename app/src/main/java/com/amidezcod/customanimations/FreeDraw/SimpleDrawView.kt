@@ -1,14 +1,14 @@
 package com.amidezcod.customanimations.FreeDraw
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Path
+import android.graphics.*
+import android.os.Environment
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
+import java.io.File
+import java.io.FileOutputStream
 
 
 class SimpleDrawView(context: Context, attrs: AttributeSet) : View(context, attrs) {
@@ -49,7 +49,28 @@ class SimpleDrawView(context: Context, attrs: AttributeSet) : View(context, attr
 
     //Not Implemented
     fun takePicture() {
-        Toast.makeText(context, "Click ", Toast.LENGTH_SHORT).show()
+        val paint = Paint()
+        paint.apply {
+            style = Paint.Style.FILL
+            color = Color.WHITE
+        }
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        Canvas(bitmap).run {
+            drawPaint(paint)
+            drawPath(path, drawPaint)
+        }
+
+        val dirs = File(Environment.getExternalStorageDirectory().path + "/mypic")
+        if (!dirs.exists())
+            dirs.mkdirs()
+        val myPhoto = File(dirs, "photo.jpg")
+        if (myPhoto.exists()) myPhoto.delete()
+
+        FileOutputStream(myPhoto).apply {
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, this)
+            flush()
+            close()
+        }
     }
 
     override fun onDraw(canvas: Canvas) {
