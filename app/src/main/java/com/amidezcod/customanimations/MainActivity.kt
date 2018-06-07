@@ -8,6 +8,7 @@ import com.amidezcod.customanimations.FreeDraw.FreeDrawActivity
 import com.amidezcod.customanimations.droidCardOverlap.DroidActivity
 import com.amidezcod.customanimations.knob_packa.KnobActivity
 import com.amidezcod.customanimations.revealBasedAnimation.RevealActivity
+import com.amidezcod.customanimations.scalingLayout.ScalingLayoutFab
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         }
         free_Draw.setOnClickListener {
             intent11<FreeDrawActivity>()
+        }
+        scaling.setOnClickListener {
+            intent11<ScalingLayoutFab>()
         }
     }
 

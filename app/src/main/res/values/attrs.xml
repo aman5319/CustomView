@@ -19,7 +19,9 @@
         <attr name="barTitle" format="string" />
         <attr name="message" format="string" />
         <attr name="showMessage" format="boolean" />
+    </declare-styleable>
 
-
+    <declare-styleable name="ScalingLayout">
+        <attr name="radiusFactor" format="float" />
     </declare-styleable>
 </resources>
