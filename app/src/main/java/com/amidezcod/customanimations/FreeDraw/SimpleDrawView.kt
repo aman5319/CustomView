@@ -87,10 +87,10 @@ class SimpleDrawView(context: Context, attrs: AttributeSet) : View(context, attr
 
     private fun notifyGallery(photo: File) {
 
+        // the listner inside mediascanner runs on binder thread that why handler post method to execute inside ui thread for showing toast and notidication
         MediaScannerConnection.scanFile(context, arrayOf(photo.absolutePath), null) { path, uri ->
             Handler(context.mainLooper).post({
                 Toast.makeText(context, "${photo.name} saved to gallery", Toast.LENGTH_SHORT).show()
-                Log.v("TAG", uri.toString())
             })
         }
     }
@@ -109,13 +109,16 @@ class SimpleDrawView(context: Context, attrs: AttributeSet) : View(context, attr
         val pointX = event!!.x
         val pointY = event.y
         when (event.action) {
+        // for the first time when user clicks it
             MotionEvent.ACTION_DOWN -> {
                 path.moveTo(pointX, pointY)
                 return true
             }
+            // after when user swipes it
             MotionEvent.ACTION_MOVE -> path.lineTo(pointX, pointY)
             else -> return false
         }
+        // to be run off main thread to redraw
         postInvalidate() // Indicate view should be redrawn
         return true
     }

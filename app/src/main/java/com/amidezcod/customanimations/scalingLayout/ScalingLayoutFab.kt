@@ -12,6 +12,7 @@ import com.amidezcod.customanimations.R
 import com.amidezcod.customanimations.scalingLayout.scalingLayoutLibrary.ScalingLayout
 import com.amidezcod.customanimations.scalingLayout.scalingLayoutLibrary.ScalingLayoutListener
 import com.amidezcod.customanimations.scalingLayout.scalingLayoutLibrary.States
+import java.util.*
 
 class ScalingLayoutFab : AppCompatActivity() {
 
@@ -61,6 +62,7 @@ class ScalingLayoutFab : AppCompatActivity() {
             override fun OnProgress(progress: Float) {
                 if (progress > 0) {
                     fabIcon.visibility = View.INVISIBLE
+                
                 }
 
                 if (progress < 1) {

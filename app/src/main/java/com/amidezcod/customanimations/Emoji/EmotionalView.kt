@@ -6,6 +6,7 @@ import android.graphics.*
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import com.amidezcod.customanimations.R
 
@@ -56,7 +57,6 @@ class EmotionalView(context: Context?, attrs: AttributeSet?) : View(context, att
     }
 
     override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
         drawBorder(canvas)
         drawFaceBackground(canvas)
         drawMouth(canvas)
@@ -114,15 +114,22 @@ class EmotionalView(context: Context?, attrs: AttributeSet?) : View(context, att
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        /**
+         * Here resolveSizeAndState method is used to calculate width
+         * from measurespec instead of giving a custom implementation as done in CircularImageView here we depend on
+         * this method to do all for us.
+         */
+
         size = Math.min(measuredWidth, measuredHeight)
         val minw = size + paddingLeft + paddingRight
+
         val w = View.resolveSizeAndState(minw, widthMeasureSpec, 0)
         // Ask for a height that would let the view get as big as it can
         var minh = size + paddingBottom + paddingTop
         val h = View.resolveSizeAndState(minh, heightMeasureSpec, 0)
+        Log.d("TAH", "size ${size} , $w , $h $minh $minw $measuredHeight $measuredWidth")
         setMeasuredDimension(w, h)
-        radius = (size * 0.95 / 2f).toFloat()
+        radius = (size*0.95 / 2f).toFloat()
     }
 
     override fun onSaveInstanceState(): Parcelable {

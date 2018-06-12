@@ -24,7 +24,6 @@ class DroidClassView(context: Context, var droids: Array<Droid>, var droidImageW
     }
 
     override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
         if (droids.isNotEmpty() && droids.size == mDroidCards.size) {
             for (i in 0 until mDroidCards.size - 1) {
                 cardLeft = i * cardSpacing

@@ -33,14 +33,11 @@ class EditTextClear : AppCompatEditText, View.OnTouchListener, TextWatcher, View
         if (compoundDrawables[2] != null) {
             val x = event!!.x
             val y = event.y
-            // Adding free space around image to increase area fro tap on cross
+            // Adding free space around image to increase area for tap on cross
             val FREE_SPACE = 10f
-            val drawableX1 = v!!.width - mClearButtonImage.intrinsicWidth - FREE_SPACE
-            val drawableX2 = v.width
-
-            val drawableY1 = height - mClearButtonImage.intrinsicHeight - FREE_SPACE
-            val drawableY2 = height
-            val tapped: Boolean = x >= drawableX1 && x <= drawableX2 && y >= drawableY1 && y <= drawableY2
+            val right = v!!.width - compoundDrawables[2].intrinsicWidth - FREE_SPACE
+            val left = v.width
+            val tapped: Boolean = x >= right && x <= left// && y >= drawableY1 && y <= drawableY2
 
             if (tapped) {
                 if (event.action == MotionEvent.ACTION_UP) {
